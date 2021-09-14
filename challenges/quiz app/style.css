@@ -1,0 +1,104 @@
+* {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin-top: 0 !important;
+}
+
+ol, ul {
+  list-style-type: none;
+}
+
+a {
+  color: #444;
+}
+
+a:hover {
+  color: #ffea00;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+.quiz-box {
+  width: 90%;
+  max-width: 350px;
+  height: auto;
+  border: 1px solid #c2c2c2;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-box h2 {
+  font-size: 18px;
+  margin-top: 20px;
+  padding: 0px 20px;
+  font-weight: 500;
+  display: block;
+  min-height: 60px;
+}
+
+.quiz-box ul {
+  list-style: none;
+  padding: 10px 20px;
+}
+
+.quiz-box li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.quiz-box li input {
+  margin-right: 5px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.quiz-box li label {
+  cursor: pointer;
+}
+
+.quiz-box button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 5px;
+  background-color: #ffea00;
+  color: #444;
+  font-size: 20px;
+  font-weight: 900;
+  border-radius: 0px 0px 10px 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.quiz-box button:hover {
+  background-color: #f5e000;
+}

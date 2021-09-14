@@ -1,0 +1,113 @@
+* {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin-top: 0 !important;
+}
+
+ol, ul {
+  list-style-type: none;
+}
+
+a {
+  color: #444;
+}
+
+a:hover {
+  color: #ffea00;
+}
+
+body {
+  background: url("assets/images/mountain-night.jpg");
+  background-position: center top;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.header {
+  font-size: 42px;
+  color: #f5f5f5;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+}
+
+.sec-container {
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: row;
+}
+
+.sec-container * {
+  color: #f5f5f5;
+}
+
+.sec-container .sec-container-item-block {
+  width: 25%;
+  padding: 10px;
+}
+
+.sec-container .sec-sec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 100%;
+  padding: 15px 25px;
+  box-shadow: 0px 2px 10px #000;
+}
+
+.sec-container .sec-sec .sec-number {
+  font-size: 52px;
+  font-weight: 900;
+}
+
+.sec-container .sec-sec .sec-text {
+  font-size: 28px;
+}
+
+@media screen and (max-width: 768px) {
+  .sec-container {
+    flex-direction: column;
+  }
+  .sec-container .sec-container-item-block {
+    width: 100%;
+  }
+  .sec-container .sec-sec {
+    flex-direction: row;
+  }
+  .sec-container .sec-sec .sec-number {
+    width: 50%;
+  }
+  .sec-container .sec-sec .sec-text {
+    width: 50%;
+  }
+}
