@@ -1,0 +1,65 @@
+* {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin-top: 0 !important;
+}
+
+ol, ul {
+  list-style-type: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #111;
+  color: #28ad00;
+  font-family: monospace;
+  padding: 10px 20px;
+  font-size: 20px;
+  word-wrap: break-word;
+}
+
+a {
+  color: #28ad00;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.main .list-of-projects {
+  margin-top: 20px;
+}
+
+.main .list-of-projects li {
+  margin-bottom: 20px;
+}
+
+.main .list-of-projects li .material-icons {
+  margin-right: 10px;
+}
+
+.main .list-of-projects .inner-tree {
+  margin-top: 20px;
+  margin-left: 36px;
+}
+
+.footer {
+  margin-top: 100px;
+  padding: 10px 0;
+  border-top: 1px solid #28ad00;
+}

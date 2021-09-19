@@ -17,9 +17,3 @@ html {
 ol, ul {
   list-style-type: none;
 }
-a {
-  color: $text-d;
-  &:hover{
-    color: $primary-color;
-  }
-}

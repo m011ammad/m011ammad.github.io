@@ -1,2 +1,41 @@
 @import "_variable";
 @import "_reboot";
+
+body {
+
+    display: flex;
+    flex-direction: column;
+    background-color: #111;
+    color: rgb(40, 173, 0);
+    font-family: monospace;
+    padding: 10px 20px;
+    font-size: 20px;
+    word-wrap: break-word;
+}
+a {
+    color: rgb(40, 173, 0);
+    text-decoration: underline;
+    &:hover {
+        color: #fff;
+    }           
+}
+.main {
+    .list-of-projects {
+        margin-top: 20px;
+        li {
+            margin-bottom: 20px;
+            .material-icons {
+                margin-right: 10px;
+            }
+        }
+        .inner-tree {
+            margin-top: 20px;
+            margin-left: 36px;
+        }
+    }
+}
+.footer {
+    margin-top: 100px;
+    padding: 10px 0;
+    border-top: 1px solid rgb(40, 173, 0);
+}
