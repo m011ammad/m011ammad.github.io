@@ -3,6 +3,7 @@
 // giving html elements
 const clear = document.querySelector('.clear');
 const date  = document.querySelector('.date');
+const today = document.querySelector('.today');
 const list  = document.querySelector('.list');
 const input = document.querySelector('.input');
 const add   = document.querySelector('.add-task');
@@ -11,6 +12,7 @@ const itemsText   = document.querySelectorAll('.item-text');
 const itemsDelete = document.querySelectorAll('.item-delete');
 let idCounter;
 let dataList = [];
+
 
 // ! add function
 function addToDo(text, id, trash) {
@@ -27,6 +29,7 @@ function addToDo(text, id, trash) {
     list.insertAdjacentHTML('beforeend', item);
 }
 
+
 // ! get localStorage data and save to dataList
 let parsedList = JSON.parse(localStorage.getItem("ToDo"));
 if(parsedList != null) {
@@ -41,9 +44,38 @@ if(parsedList != null) {
     })
 }
 
+
 // ! date
-let todayDate = new Date().toISOString().split("T")[0];
-date.innerHTML = todayDate;
+let todayDate = new Date();
+date.innerHTML = todayDate.toISOString().split("T")[0];
+// today
+let todayNumber = todayDate.getDay();
+switch (todayNumber) {
+    case 0:
+        today.innerHTML = 'Sunday';
+        break;
+    case 1:
+        today.innerHTML = 'Monday';
+        break;
+    case 2:
+        today.innerHTML = 'Tuesday';
+        break;
+    case 3:
+        today.innerHTML = 'Wednesday';
+        break;
+    case 4:
+        today.innerHTML = 'Thursday';
+        break;
+    case 5:
+        today.innerHTML = 'Friday';
+        break;
+    case 6:
+        today.innerHTML = 'Saturday';
+        break;
+    default:
+        break;
+}
+
 
 // ! clear
 clear.addEventListener('click', e => {
@@ -56,8 +88,9 @@ clear.addEventListener('click', e => {
     window.localStorage.removeItem('ToDo');
 })
 
-// ! click on add item
-add.addEventListener('click', e => {
+
+// ! after submit(by click and enter) function
+let afterSubmit = e => {
 
     // remove emptyList
     if (
@@ -97,7 +130,17 @@ add.addEventListener('click', e => {
 
     // update idCounter
     idCounter++;
+}
+// ! click on add item
+add.addEventListener('click', afterSubmit);
+// ! add by Enter key
+input.addEventListener('keyup', e => {
+    console.log(1);
+    if(e.key == 'Enter') {
+        afterSubmit(e);
+    }
 })
+
 
 // ! done , delete
 list.addEventListener('click', e => {
@@ -139,11 +182,12 @@ list.addEventListener('click', e => {
     }
 })
 
+
 // ! add text and image if list is empty
 if (dataList.length == 0) {
 const emptyList = ` <div class="list-empty">
                         <h3>Your List Is Empty!</h3>
-                        <img src="assets/images/empty.png" alt="empty list">
+                        <img src="assets/images/to-do-list.svg" alt="empty list">
                     </div>`;
 list.insertAdjacentHTML("beforeend", emptyList);
 }
